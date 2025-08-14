@@ -1,6 +1,3 @@
-from selenium.webdriver.common.by import By
-import time
-
 class BasePage:
     
     def __init__(self, driver, base_url):
@@ -9,6 +6,18 @@ class BasePage:
     
     def visit(self):
         return self.driver.get(self.base_url)
+    
+    def back(self):
+        self.driver.back()
+        
+    def forward(self):
+        self.driver.forward()
+        
+    def refresh(self):
+        self.driver.refresh()
+        
+    def get_title(self):
+        return self.driver.title
     
     def get_url(self):
         return self.driver.current_url
