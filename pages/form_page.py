@@ -15,4 +15,11 @@ class FormPage(BasePage):
         self.button_submit = WebElement(driver, '#submit')
         self.modal_dialog = WebElement(driver, '#body > div.fade.modal.show > div')
         self.button_close_modal = WebElement(driver, '#closeLargeModal')
-
+        self.user_form = WebElement(driver, '#userForm')
+        self.hobbies = WebElement(driver, '#hobbies-checkbox-1')
+        self.current_address = WebElement(driver, '#currentAddress')
+        self.state = WebElement(driver, '#state')
+        self.city = WebElement(driver, '#city')
+        self.NCR =  WebElement(driver, "//*[contains(text(), 'NCR')]", 'xpath')
+        self.delhi = WebElement(driver, "//*[contains(text(), 'Delhi')]", 'xpath')
+        
