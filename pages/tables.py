@@ -12,6 +12,14 @@ class Tables(BasePage):
         self.base_url = 'https://demoqa.com/webtables'
         super().__init__(driver, self.base_url)
         
+        self.first_name_header = WebElement(driver, '.rt-th.rt-resizable-header:nth-child(1)')
+        self.last_name_header = WebElement(driver, '.rt-th.rt-resizable-header:nth-child(2)')
+        self.age_header = WebElement(driver, '.rt-th.rt-resizable-header:nth-child(3)')
+        self.email_header = WebElement(driver, '.rt-th.rt-resizable-header:nth-child(4)')
+        self.salary_header = WebElement(driver, '.rt-th.rt-resizable-header:nth-child(5)')
+        self.department_header = WebElement(driver, '.rt-th.rt-resizable-header:nth-child(6)')
+        self.action_header = WebElement(driver, '.rt-th.rt-resizable-header:nth-child(7)')
+        
         self.no_data = WebElement(driver, '#div.rt-noData')
         self.button_delete_row = WebElement(driver, '#delete-record-')
         self.add_button = WebElement(driver, '#addNewRecordButton')
@@ -67,3 +75,6 @@ class Tables(BasePage):
         self.department.send_keys('IT')
         self.submit_button.click_force()
         time.sleep(2)
+        
+    def get_header_sort_class(self, header_element):
+        return header_element.get_dom_attribute('class')

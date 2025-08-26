@@ -1,3 +1,4 @@
+from components.components import WebElement
 import logging
 
 class BasePage:
@@ -5,6 +6,8 @@ class BasePage:
     def __init__(self, driver, base_url):
         self.driver = driver
         self.base_url = base_url
+        self.viewport = WebElement(driver, 'meta[name="viewport"]')
+
     
     def visit(self):
         return self.driver.get(self.base_url)
